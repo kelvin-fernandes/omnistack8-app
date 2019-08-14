@@ -22,7 +22,7 @@ export default function Login({ navigation }) {
 
     await AsyncStorage.setItem('user', _id);
 
-    navigation.navigate('Main', { _id });
+    navigation.navigate('Main', { user: _id });
   }
 
   return (
@@ -37,11 +37,11 @@ export default function Login({ navigation }) {
         autoCorrect={false}
         style={styles.input} 
         placeholderTextColor='#999'
-        placeholder="Digite seu usuário no Github"
+        placeholder="Type your github username"
         value={user}
         onChangeText={setUser}/>
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
-        <Text style={styles.buttontext}>Entrar</Text>
+        <Text style={styles.buttontext}>Sign in</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   ); 
